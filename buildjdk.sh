@@ -17,8 +17,8 @@ export FREETYPE_DIR=`pwd`/freetype-$BUILD_FREETYPE_VERSION/build_android-${TARGE
 export CUPS_DIR=`pwd`/cups-2.2.4
 
 # simplest to force headless:)
-export CFLAGS+=" -DDONT_COMPILE_SHENANDOAH -DLE_STANDALONE -DHEADLESS" # -I$FREETYPE_DIR -I$CUPS_DIR
-export LDFLAGS+=" -L`pwd`/dummy_libs -Wl,--warn-unresolved-symbols"
+export CFLAGS+=" -DDONT_COMPILE_SHENANDOAH -DLE_STANDALONE -DHEADLESS -fPIC" # -I$FREETYPE_DIR -I$CUPS_DIR
+export LDFLAGS+=" -L`pwd`/dummy_libs -Wl,--warn-unresolved-symbols -pie"
 
 # It isn't good, but need make it build anyways
 # cp -R $CUPS_DIR/* $ANDROID_INCLUDE/
